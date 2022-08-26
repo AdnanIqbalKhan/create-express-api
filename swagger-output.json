@@ -1,0 +1,406 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Health Checkup Camp",
+    "description": ""
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/user/": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "description": "Get All User",
+        "operationId": "get_all_user",
+        "parameters": [],
+        "responses": {}
+      },
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "description": "Create User",
+        "operationId": "create_user",
+        "parameters": [],
+        "responses": {},
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "age": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "name",
+                  "age"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/{id}": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "description": "Get All User",
+        "operationId": "get_all_user",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {}
+      },
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "description": "Update User",
+        "operationId": "update_user",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "age": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "User"
+        ],
+        "description": "Remove User",
+        "operationId": "remove_user",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/slot/": {
+      "get": {
+        "tags": [
+          "User Slot"
+        ],
+        "description": "Get All User Slot",
+        "operationId": "get_all_user_slot",
+        "parameters": [],
+        "responses": {}
+      },
+      "post": {
+        "tags": [
+          "User Slot"
+        ],
+        "description": "Create User Slot",
+        "operationId": "create_user_slot",
+        "parameters": [],
+        "responses": {},
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "location": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name",
+                  "location"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/slot/{id}": {
+      "get": {
+        "tags": [
+          "User Slot"
+        ],
+        "description": "Get All User Slot",
+        "operationId": "get_all_user_slot",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {}
+      },
+      "put": {
+        "tags": [
+          "User Slot"
+        ],
+        "description": "Update User Slot",
+        "operationId": "update_user_slot",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "location": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "User Slot"
+        ],
+        "description": "Remove User Slot",
+        "operationId": "remove_user_slot",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/venue/": {
+      "get": {
+        "tags": [
+          "Checkup Venue"
+        ],
+        "description": "Get All Checkup Venue",
+        "operationId": "get_all_checkup_venue",
+        "parameters": [],
+        "responses": {}
+      },
+      "post": {
+        "tags": [
+          "Checkup Venue"
+        ],
+        "description": "Create Checkup Venue",
+        "operationId": "create_checkup_venue",
+        "parameters": [],
+        "responses": {},
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "userId": {
+                    "type": "string"
+                  },
+                  "venueId": {
+                    "type": "string"
+                  },
+                  "scheduledAt": {
+                    "type": "Date"
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "ALLOCATED",
+                      "COMPLETE",
+                      "CANCELLED"
+                    ],
+                    "default": "ALLOCATED"
+                  },
+                  "notes": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "userId",
+                  "venueId",
+                  "scheduledAt",
+                  "status"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/venue/{id}": {
+      "get": {
+        "tags": [
+          "Checkup Venue"
+        ],
+        "description": "Get All Checkup Venue",
+        "operationId": "get_all_checkup_venue",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {}
+      },
+      "put": {
+        "tags": [
+          "Checkup Venue"
+        ],
+        "description": "Update Checkup Venue",
+        "operationId": "update_checkup_venue",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "userId": {
+                    "type": "string"
+                  },
+                  "venueId": {
+                    "type": "string"
+                  },
+                  "scheduledAt": {
+                    "type": "Date"
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "ALLOCATED",
+                      "COMPLETE",
+                      "CANCELLED"
+                    ],
+                    "default": "ALLOCATED"
+                  },
+                  "notes": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Checkup Venue"
+        ],
+        "description": "Remove Checkup Venue",
+        "operationId": "remove_checkup_venue",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {}
+      }
+    }
+  }
+}

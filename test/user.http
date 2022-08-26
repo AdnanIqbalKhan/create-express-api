@@ -1,0 +1,39 @@
+@hostname = localhost
+@port = 3000
+@host = http://{{hostname}}:{{port}}
+@endpoint = user
+
+
+
+
+GET {{host}}/{{endpoint}} HTTP/1.1
+
+###
+
+GET {{host}}/{{endpoint}}/63033eb8958f5d089f1c1b6a HTTP/1.1
+
+###
+
+POST {{host}}/{{endpoint}} HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Waqar",
+    "age":36
+}
+
+
+###
+
+
+PUT {{host}}/{{endpoint}}/63033eb8958f5d089f1c1b6a HTTP/1.1
+content-type: application/json
+
+{
+    "age":40
+}
+
+
+###
+
+DELETE  {{host}}/{{endpoint}}/63033eb8958f5d089f1c1b6a HTTP/1.1
