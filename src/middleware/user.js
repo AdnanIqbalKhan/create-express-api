@@ -1,5 +1,4 @@
-import { Types, validateRequiredFields, validateFields } from './generic.js'
-
+const { Types, validateRequiredFields, validateFields } = require('./generic.js')
 const typeName = 'User'
 
 const rules = [{
@@ -32,6 +31,6 @@ const update = (req, res, next) => {
     }
 }
 
-export default {
+module.exports = {
     create, update
 }

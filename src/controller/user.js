@@ -1,5 +1,5 @@
-import Model from '../models/user.model.js'
-import Generic from './generic.js'
+const Model = require('../models/user.js')
+const Generic = require('./generic.js')
 const typeName = 'User'
 
 const getAll = async (req, res) => {
@@ -96,6 +96,6 @@ const remove = async (req, res) => {
     Generic.remove(req, res, typeName, Model)
 }
 
-export default {
+module.exports = {
     get, getAll, create, update, remove
 }

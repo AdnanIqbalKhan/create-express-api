@@ -57,6 +57,6 @@ const remove = async (req, res, typeName, Model) => {
     }
 }
 
-export default {
+module.exports = {
     get, getAll, create, update, remove
 }

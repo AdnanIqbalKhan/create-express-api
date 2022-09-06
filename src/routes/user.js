@@ -1,7 +1,7 @@
-import { Router } from 'express'
-import GenericMiddleware from '../middleware/generic.js'
-import Middleware from '../middleware/user.js'
-import Controller from '../controller/user.js'
+const { Router } = require('express')
+const GenericMiddleware = require('../middleware/generic.js')
+const Middleware = require('../middleware/user.js')
+const Controller = require('../controller/user.js')
 
 const router = Router()
 
@@ -14,4 +14,4 @@ router.route('/:id')
     .put(GenericMiddleware.validateId, Middleware.update, Controller.update)
     .delete(GenericMiddleware.validateId, Controller.remove)
 
-export default router
+module.exports = router

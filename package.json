@@ -1,11 +1,14 @@
 {
-  "name": "user_checkup",
+  "name": "create-express-api",
   "version": "1.0.0",
-  "description": "A REST API to help in organizing the annual health checkup camp",
+  "description": "An Express REST API boilerplate",
   "main": "index.js",
+  "author": "Adnan Iqbal Khan",
+  "license": "Apache-2.0",
   "scripts": {
     "start": "nodemon index.js localhost 8080",
     "dev": "node index.js",
+    "test": "jest",
     "swagger": "node swagger.js"
   },
   "keywords": [
@@ -14,9 +17,26 @@
     "express",
     "nodejs"
   ],
-  "type": "module",
-  "author": "Adnan Iqbal Khan",
-  "license": "Apache-2.0",
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AdnanIqbalKhan/create-express-api.git"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",

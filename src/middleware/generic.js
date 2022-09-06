@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+const mongoose = require('mongoose')
 const ObjectId = mongoose.Types.ObjectId
 
 const Types = {
@@ -104,10 +104,6 @@ const validateFields = (rules, inputData, typeName) => {
     return errors
 }
 
-export {
-    validateId, validateRequiredFields, validateFields, Types
-}
-
-export default {
-    validateId, validateRequiredFields, validateFields
+module.exports = {
+    Types, validateId, validateRequiredFields, validateFields
 }
