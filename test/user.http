@@ -5,12 +5,15 @@
 
 
 
+GET {{host}}/ HTTP/1.1
+
+###
 
 GET {{host}}/{{endpoint}} HTTP/1.1
 
 ###
 
-GET {{host}}/{{endpoint}}/63033eb8958f5d089f1c1b6a HTTP/1.1
+GET {{host}}/{{endpoint}}/630f37b5b793658e6d8c9499 HTTP/1.1
 
 ###
 
@@ -18,19 +21,26 @@ POST {{host}}/{{endpoint}} HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Saleem",
-    "age":72
+    "name": "Saleem14",
+    "age":79
 }
 
 
 ###
 
-
-PUT {{host}}/{{endpoint}}/63033eb8958f5d089f1c1b6a HTTP/1.1
+PUT {{host}}/{{endpoint}}/6321d0896936f51210d1d718 HTTP/1.1
 content-type: application/json
 
 {
-    "age":40
+    "age":false
+}
+
+###
+PATCH {{host}}/{{endpoint}}/6321d0896936f51210d1d718 HTTP/1.1
+content-type: application/json
+
+{
+    "age":false
 }
 
 

@@ -1,17 +1,18 @@
-const Model = require('../models/user.js')
-const Generic = require('./generic.js')
+import { Response, Request } from 'express'
+import Generic from './generic'
+import { IUser, User } from '../models/user'
 const typeName = 'User'
 
-const getAll = async (req, res) => {
+const getAll = async (req: Request, res: Response) => {
     /*
     #swagger.tags = ['User']
     #swagger.description = 'Get All User'
     #swagger.operationId = 'get_all_user'
     */
-    Generic.getAll(req, res, typeName, Model)
+    Generic.getAll < IUser > (req, res, typeName, User)
 }
 
-const get = async (req, res) => {
+const get = async (req: Request<{ id: string }>, res: Response) => {
     /*
     #swagger.tags = ['User']
     #swagger.description = 'Get User'
@@ -21,10 +22,10 @@ const get = async (req, res) => {
         type: "ObjectId"
     }
     */
-    Generic.get(req, res, typeName, Model)
+    Generic.get < IUser > (req, res, typeName, User)
 }
 
-const create = async (req, res) => {
+const create = async (req: Request<{}, { data: IUser }>, res: Response) => {
     /*
     #swagger.tags = ['User']
     #swagger.description = 'Create User'
@@ -49,10 +50,10 @@ const create = async (req, res) => {
         } 
     }
     */
-    Generic.create(req, res, typeName, Model)
+    Generic.create < IUser > (req, res, typeName, User)
 }
 
-const update = async (req, res) => {
+const update = async (req: Request<{ id: string }>, res: Response) => {
     /*
     #swagger.tags = ['User']
     #swagger.description = 'Update User'
@@ -80,10 +81,10 @@ const update = async (req, res) => {
         } 
     }
     */
-    Generic.update(req, res, typeName, Model)
+    Generic.update < IUser > (req, res, typeName, User)
 }
 
-const remove = async (req, res) => {
+const remove = async (req: Request<{ id: string }>, res: Response) => {
     /*
     #swagger.tags = ['User']
     #swagger.description = 'Remove User'
@@ -93,9 +94,9 @@ const remove = async (req, res) => {
         type: "ObjectId"
     }
     */
-    Generic.remove(req, res, typeName, Model)
+    Generic.remove < IUser > (req, res, typeName, User)
 }
 
-module.exports = {
+export {
     get, getAll, create, update, remove
 }

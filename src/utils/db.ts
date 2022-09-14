@@ -1,8 +1,10 @@
-const { connect, connection } = require('mongoose')
-connect(process.env.DB_STRING,
-    (err) => {
-        if (err) console.error(err)
-    })
+
+import { connect, connection } from 'mongoose'
+
+
+connect(process.env.DB_STRING).
+    catch(error => console.error('DB-ERROR: ', error))
+
 const database = connection
 
 database.on('error', (error) => {
@@ -13,4 +15,4 @@ database.once('connected', () => {
     console.log('Database Connected')
 })
 
-module.exports = database
+export = database
